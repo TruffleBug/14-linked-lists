@@ -168,6 +168,30 @@ class LinkedList {
             return;
         }
     }
+
+    // removes node at index
+    removeAt(index) {
+        if (index < 0 || index > this.size()) return 'Invalid index';
+
+        if (index == 0) {
+            this.head = this.head.nextNode;
+            return;
+        }
+
+        let current = this.head;
+        let previous;
+        let currentIndex = 0;
+
+        while (currentIndex < index) {
+            previous = current;
+            current = current.nextNode;
+            currentIndex++;
+        }
+        if (currentIndex === index) {
+            previous.nextNode = current.nextNode;
+            return;
+        }
+    }
 }
 
 export { LinkedList };
