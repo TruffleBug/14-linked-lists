@@ -11,7 +11,5 @@ list.append('turtle');
 list.prepend('horse');
 
 console.log(list.toString());
-console.log(list.find('hamster'));  
-
-list.insertAt('sheep', 3)
-console.log(list.toString());
+console.log(list.containsRec('hamster'));  
+console.log(list.containsRec('cats'));  

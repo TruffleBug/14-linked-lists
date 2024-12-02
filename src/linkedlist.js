@@ -97,6 +97,15 @@ class LinkedList {
         return false;
     }
 
+    // returns true if value exists in list, otherwise false RECURSIVELY
+    containsRec(value, current = this.head) {
+        if (!this.head) return 'No nodes in list';
+
+        if (current.nextNode == null && current.value != value) return false;
+        if (current.value === value) return true;
+        return this.containsRec(value, current.nextNode);
+    }
+
     // returns index of node containing value, otherwise null
     find(value) {
         if (!this.head) return 'No nodes in list';
